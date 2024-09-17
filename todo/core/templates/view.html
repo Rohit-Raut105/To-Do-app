@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Data</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f4f4f4;
+            text-align: left;
+        }
+        .action-links a {
+            display: inline-block;
+            padding: 6px 12px;
+            margin-right: 8px;
+            text-decoration: none;
+            color: white;
+            background-color: #007bff;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .action-links a.delete {
+            background-color: #dc3545;
+        }
+        .action-links a:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <h1>User Data</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+                <th>Message</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- iterating over the user data (values) -->
+            {% for i in data %}
+            <tr>
+                <td>{{ i.first_name }}</td>
+                <td>{{ i.last_name }}</td>
+                <td>{{ i.phone }}</td>
+                <td>{{ i.email }}</td>
+                <td>{{ i.message }}</td>
+                <td class="action-links">
+                    <a href = "{% url 'update' i.id %}">Update</a> <!-- Update link styled as button -->
+                    <a href = "{% url 'delete' i.id %}"class="delete">Delete </a> <!-- Delete link styled as button -->
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

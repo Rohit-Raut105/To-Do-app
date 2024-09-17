@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'CSS/Create.css '%}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">  
+<div class="form-container">
+        <form id="contactForm" method="POST">
+            <!-- crosh side refrence forgery  -->
+            {% csrf_token %} 
+            <h2>Save your data to contact us</h2>
+            <div class="input-group">
+                <label for="firstName"></label>
+                <div class="input-icon">
+                    <input type="text" id="firstName" name="firstName" placeholder="First name" required>
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="lastName"></label>
+                <div class="input-icon">
+                    <input type="text" id="lastName" name="lastName" placeholder=" Last Name" required>
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="phone"></label>
+                <div class="input-icon">
+                    <input type="tel" id="phone" name="phone" placeholder="Phone" required>
+                    <i class="fas fa-phone"></i>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="email"></label>
+                <div class="input-icon">
+                    <input type="email" id="email" name="email" placeholder="Email " required>
+                    <i class="fas fa-envelope"></i> 
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="message"></label>
+                <textarea id="message" name="message" rows="5" placeholder=" Message" required></textarea>
+            </div>
+            
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'CSS/Home.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .button-container {
+            margin: 20px;
+        }
+        .nav-button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+        .nav-button:hover {
+            background-color: #45a049; /* Darker green */
+        }
+    </style>
+</head>
+<body>
+    <h1>This is Home Page</h1>
+    
+    <div class="button-container">
+        <a class="nav-button" href="{% url 'admin:index' %}">Go to Admin Page</a><br>
+        <a class="nav-button" href="{% url 'Form' %}">Go to Fourm to register</a><br>
+        <a class="nav-button" href="{% url 'View' %}">Click here to see your data</a>
+    </div>
+</body>
+</html>
